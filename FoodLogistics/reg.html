@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Innovative Food Logistics</title>
+
+  <!-- Leaflet and Routing CSS for map and routing features -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+
+  <link rel="stylesheet" href="main_page.css" />
+  <link rel="stylesheet" href="reg.css" />
+</head>
+
+<body>
+  <!-- Header with navigation and auth buttons -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">I<span>FL</span></div>
+        <div class="nav-links">
+          <a href="main_page.html">Home</a>
+          <a href="main_page.html#how-it-works">How It Works</a>
+          <a href="reg.html" class="active">Resturant</a>
+          <a href="main_page.html#about-us">About Us</a>
+        </div>
+        <div class="auth-buttons">
+          <a href="#" class="btn btn-login">Login</a>
+          <a href="#" class="btn btn-signup">Sign Up</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Restaurant Registration Section -->
+  <section id="add-restaurant" class="card-section">
+    <h2><i class="fas fa-utensils"></i> Add Restaurant</h2>
+
+    <form id="restaurantForm" class="styled-form">
+      <div class="form-row">
+        <input type="text" id="name" placeholder="Restaurant Name" required />
+        <input type="text" id="location" placeholder="Full Address (e.g., ISBT, Dehradun)" required />
+      </div>
+      <div class="form-row">
+        <input type="text" id="phone" placeholder="Phone Number" required />
+        <input type="text" id="menu" placeholder="Menu Items (comma separated)" required />
+      </div>
+      <button type="submit"><i class="fas fa-plus-circle"></i> Add Restaurant</button>
+    </form>
+  </section>
+
+  <!-- Restaurant Search Section -->
+  <section id="find-restaurant" class="card-section">
+    <h2><i class="fas fa-search-location"></i> Find Nearest Restaurant</h2>
+    
+    <form class="styled-form" onsubmit="findNearest(); return false;">
+      <input id="userAddress" type="text" placeholder="Enter your address in Dehradun" />
+      <button type="submit"><i class="fas fa-search"></i> Find Nearest</button>
+    </form>
+    <div id="result"></div>
+  </section>
+
+  <!-- Restaurant List Section -->
+  <section id="restaurant-list" class="card-section">
+    <h2><i class="fas fa-list"></i> Registered Restaurants</h2>
+    
+    <ul id="restaurantDisplay" class="restaurant-list"></ul>
+  </section>
+
+  <!-- Order Tracking Input Section -->
+  <section style="background:#f1f2f6;padding:2rem 0;">
+    <div class="container">
+     
+      <form class="search-bar" onsubmit="return false;"
+        style="display: flex; flex-wrap: wrap; gap: 1em; align-items: center;">
+        <input id="address-input" type="text" placeholder="Enter customer address" autocomplete="off"
+          aria-label="Customer address input" disabled style="flex: 2; min-width: 220px;" />
+        <button id="search-btn" disabled>
+          <i class="fas fa-map-marker-alt"></i> Track Order
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Map and Route Info Panel -->
+  <div id="main-container">
+    <div id="map"></div>
+    <div id="info-panel">
+      <h2>Route Details</h2>
+      <div id="distance-time">Enter customer address and click Track Order</div>
+      <ol id="directions-list"></ol>
+    </div>
+  </div>
+
+  <!-- Login -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="close-login">&times;</span>
+      <h2>Login</h2>
+      <form id="login-form">
+        <input type="text" placeholder="Username or Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Sign Up -->
+  <div id="signup-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="close-signup">&times;</span>
+      <h2>Sign Up</h2>
+      <form id="signup-form">
+        <input type="text" placeholder="Username" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts for map, routing, and page logic -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.min.js"></script>
+  <script src="reg.js"></script>
+</body>
+
+</html>

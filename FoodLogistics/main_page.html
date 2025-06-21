@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovative Food Logistics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="main_page.css">
+</head>
+
+<body>
+    <!-- Header/Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">I<span>FL</span></div>
+                <div class="nav-links">
+                    <a href="#">Home</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="reg.html">Resturant</a>
+                    <a href="#about-us">About Us</a>
+                </div>
+                <div class="auth-buttons">
+                    <a href="#" class="btn btn-login">Login</a>
+                    <a href="#" class="btn btn-signup">Sign Up</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section -->
+    <section class="hero">
+        <div class="container" style="position:relative;z-index:2;">
+            <h1>Innovative Food Logistics</h1>
+            <p>Order from your favorite restaurants with just a few clicks and enjoy quick delivery right to your home
+                or office.</p>
+            <div class="search-bar">
+                <input type="text" id="hero-search-input" placeholder="Enter restaurant name, address or cuisine...">
+                <button id="hero-search-btn"><i class="fas fa-search"></i> Find Food</button>
+            </div>
+            <div id="search-results"></div>
+        </div>
+        <!-- Video background -->
+        <video autoplay muted loop playsinline id="hero-video"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;">
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:1;"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose IFL?</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Get your food delivered as fast as possible. Our sites shows the nearest restaurant from you
+                        location.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Small Restaurant</h3>
+                    <p>To grow your small restaurant by registering and used our service for free.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3>Great Deals</h3>
+                    <p>Enjoy exclusive discounts by ordering food.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Payments</h3>
+                    <p>Pay with confidence using our secure payment gateway with multiple payment options.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>How IFL Works</h2>
+                <p>Getting your favorite food delivered has never been easier</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Register Restaurant</h3>
+                    <p>Here you can register your restaurant by adding some details and get free of cost services.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Nearby Restaurant</h3>
+                    <p>Search Restaurant by entering your location and then it will show nearby restaurant from your
+                        location.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Delivery Boy</h3>
+                    <p>Delivery Boy can find the best route for reaching customer location by entering customer address.
+                    </p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Shows Route</h3>
+                    <p>Optimized Route display to arrive your food as fast.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-us" id="about-us" style="background: var(--light, #f1f2f6); padding: 3rem 0;">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: #333;">
+                <p>
+                    <strong>Innovative Food Logistics</strong> is dedicated to revolutionizing the way you experience
+                    food delivery.
+                    Founded by a team of foodies and tech enthusiasts, our mission is to connect you with your favorite
+                    local restaurants and deliver delicious meals straight to your door—quickly, safely, and reliably.
+                </p>
+                <p>
+                    We partner with a wide variety of restaurants to offer you an extensive selection of cuisines, from
+                    comfort food to gourmet delights. Our platform is designed for ease of use, connect small business,
+                    and
+                    real-time order tracking, ensuring a seamless experience every time you order.
+                </p>
+                <p>
+                    <b>Team Members : </b>Suryansh Chauhan, Shardul, Ayush Juyal, Khushi Thapliyal
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-login">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="text" placeholder="Username or Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-signup">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <input type="text" placeholder="Username" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="main_page.js"></script>
+</body>
+
+</html>
